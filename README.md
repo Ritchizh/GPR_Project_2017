@@ -20,8 +20,11 @@ PCBs.zip - an archive with printed circuit boards designs (masks in .png format)
 
 # Notice 
 that there is no tutorial for designing antennas so far. If you make ones, publish your results and send me a link - this could be a valuable contribution to this project and beneficial for other researchers.
+
 # Links:
 MIT Radar course (2011): https://ocw.mit.edu/resources/res-ll-003-build-a-small-radar-system-capable-of-sensing-range-doppler-and-synthetic-aperture-radar-imaging-january-iap-2011/index.htm
+
 COST Action TU1208 GPR educational pack: http://gpradar.eu/resources/educationpack.html 
+
 # Contact email:
 mchizh@rslab.ru
