@@ -14,6 +14,8 @@ Mbed_Python_Control_LPC1768_2_main.txt - same firmware to read the code in the t
 
 TU1208_Guide to building a GPR radar for educational use _FINAL.pdf - Developer's Guide, see page 2 to reference this project
 
+Datasheets.zip - an archive with datasheets of different radar components
+
 PCBs.zip - an archive with printed circuit boards designs (masks in .png format)
 
 # Notice 
