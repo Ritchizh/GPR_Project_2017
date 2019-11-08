@@ -9,6 +9,7 @@ Calc_DAC_with_Predistortion.py - software in Python, imported in "Python_GUI_4_S
 gpr_icon.ico,  GPR_logo.gif  - images used in the GUI
 
 Mbed_Python_Control_LPC1768_2.bin      - firmware to load on LPC microcontroller
+
 Mbed_Python_Control_LPC1768_2_main.txt - same firmware to read the code in the text format
 
 TU1208_Guide to building a GPR radar for educational use _FINAL.pdf - Developer's Guide, see page 2 to reference this project
