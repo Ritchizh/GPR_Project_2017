@@ -17,6 +17,8 @@ TU1208_Guide to building a GPR radar for educational use _FINAL.pdf - Developer'
 
 # Notice 
 that there are no PCB designs (since I participated only in the software and firmware development and don't have them) and no tutorial for designing antennas so far. If you make ones, publish your results and send me a link - this could be a valuable contribution to this project and beneficial for other researchers.
+# Contact email:
+mchizh@rslab.ru
 
 
 
