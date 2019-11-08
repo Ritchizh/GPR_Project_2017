@@ -14,7 +14,8 @@ Mbed_Python_Control_LPC1768_2_main.txt - same firmware to read the code in the t
 TU1208_Guide to building a GPR radar for educational use _FINAL.pdf - Developer's Guide, see page 2 to reference this project
 
 
-# Notice that there are no PCB designs (since I participated only in the software and firmware development) and no tutorial for designing antennas so far. If you make ones, publish your results and send me a link - this could be a valuable contribution to this project and beneficial for other researchers.
+# Notice 
+that there are no PCB designs (since I participated only in the software and firmware development) and no tutorial for designing antennas so far. If you make ones, publish your results and send me a link - this could be a valuable contribution to this project and beneficial for other researchers.
 
 
 
