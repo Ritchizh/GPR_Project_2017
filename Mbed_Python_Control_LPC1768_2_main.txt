@@ -1,0 +1,65 @@
+// This Project should be built in Mbed online compiler (https://developer.mbed.org/compiler)
+
+#include "mbed.h"
+
+Serial pc(USBTX, USBRX);        // mbed communicates with a host PC through a USB Virtual Serial Port
+
+Ticker      myTick;             // Ticker is used for a recurring interrupt
+DigitalOut  mypin(p25);         // GPIO, P2_1
+AnalogOut   Aout(p18);          // DAC,  P0_26
+
+#define num_values  200         // is fixed, must be even(!)
+float dt;                       // microseconds, the value is read from Serial
+
+float DAC_buf[num_values+1]; // a buffer for DAC values and + 1 for the dt value
+
+// Ticker function, updates DAC values every dt:
+void T_function() {
+    static int counter = 0;       // Counts number of Ticker calls
+    Aout = DAC_buf[counter];     // Analog out: new voltage value from DAC_buffer into the DAC
+    if (counter == 0) {   
+        mypin = 1;                // Synchronization at t = 0
+    } 
+    else if (counter == num_values/2) {
+        mypin = 0;                // Synchronization at t = T/2
+    }
+    else if (counter == num_values - 1) { 
+        counter = 0;              // Restarting the counter
+        return;
+    }
+    counter++;
+}
+
+// Function to parse chars into floats:
+float bytesToFloat(char b0, char b1, char b2, char b3){
+    float output;
+    *((char*)(&output) + 0) = b0;
+    *((char*)(&output) + 1) = b1;
+    *((char*)(&output) + 2) = b2;
+    *((char*)(&output) + 3) = b3;
+    return output;
+}
+
+int main() { 
+    while(1) {
+        char    ch_buffer[1024];
+        
+        // Read data through Serial from the Python script into ch_buffer:
+        for (int i=0; i<((num_values+1)*4); i++) { // +1 - for reading the dt value
+            ch_buffer[i]=pc.getc();
+        }
+        // Parse data into floats:    
+        int count_j = 1;    
+        for (int j=0; j<((num_values+1)*4-3); j+=4) {
+            if (j==0) {
+                DAC_buf[j]=bytesToFloat(ch_buffer[j], ch_buffer[j+1], ch_buffer[j+2], ch_buffer[j+3]);
+            }
+            else {
+                DAC_buf[j-3*count_j]=bytesToFloat(ch_buffer[j], ch_buffer[j+1], ch_buffer[j+2], ch_buffer[j+3]);
+                count_j++;
+            }
+        }  
+        dt = DAC_buf[num_values];               // the last transmitted float is the dt value
+        myTick.attach_us(&T_function, dt);      // Ticker calls T_function every dt microseconds       
+        }
+}
