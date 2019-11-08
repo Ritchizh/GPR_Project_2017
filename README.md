@@ -6,8 +6,7 @@ Python_GUI_4_Sliders_2.py      - software in Python, provides GUI to control the
 
 Calc_DAC_with_Predistortion.py - software in Python, imported in "Python_GUI_4_Sliders_2.py" to precalculate DAC values
 
-gpr_icon.ico
-GPR_logo.gif  - images used in the GUI
+gpr_icon.ico,  GPR_logo.gif  - images used in the GUI
 
 Mbed_Python_Control_LPC1768_2.bin      - firmware to load on LPC microcontroller
 Mbed_Python_Control_LPC1768_2_main.txt - same firmware to read the code in the text format
