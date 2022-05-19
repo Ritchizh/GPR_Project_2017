@@ -1,5 +1,9 @@
 # GPR_Project_2017
 A cheap GPR prototype has been developed by the workgroup of COST Action TU1208.
+<p align="center">
+<img src = "https://github.com/Ritchizh/GPR_Project_2017/blob/master/readme_img/e-cost.jpg" height = 240>
+</p>
+
 
 # List of Files:
 Python_GUI_4_Sliders_2.py      - software in Python, provides GUI to control the radar
